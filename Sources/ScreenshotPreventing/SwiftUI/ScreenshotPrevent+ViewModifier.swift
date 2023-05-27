@@ -5,11 +5,8 @@
 //  Created by David on 2023/4/28.
 //
 
-#if canImport(SwiftUI)
 import SwiftUI
-import ScreenshotPreventing
 
-@available(iOS 13.0, *)
 /// View modifier to wrap view inside a screenshot prevented view.
 public struct PreventScreenshot: ViewModifier {
 
@@ -22,7 +19,6 @@ public struct PreventScreenshot: ViewModifier {
     }
 }
 
-@available(iOS 13.0, *)
 public extension View {
 
     /// A view extension to wrap view inside a screenshot protected view.
@@ -33,4 +29,3 @@ public extension View {
     }
 }
 
-#endif

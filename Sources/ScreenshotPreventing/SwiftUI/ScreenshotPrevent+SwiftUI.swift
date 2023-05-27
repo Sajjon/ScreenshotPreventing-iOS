@@ -5,12 +5,9 @@
 //  Created by David on 2023/4/28.
 //
 
-#if canImport(SwiftUI)
 import SwiftUI
 import UIKit
-import ScreenshotPreventing
 
-@available(iOS 13.0, *)
 /// Internal screen shot wrapper view
 struct _ScreenshotPreventView<Content: View>: UIViewControllerRepresentable {
 
@@ -33,7 +30,6 @@ struct _ScreenshotPreventView<Content: View>: UIViewControllerRepresentable {
     }
 }
 
-@available(iOS 13.0, *)
 public struct ScreenshotPrevent<Content: View>: View {
 
     private var isProtected: Bool
@@ -50,5 +46,3 @@ public struct ScreenshotPrevent<Content: View>: View {
         }
     }
 }
-
-#endif

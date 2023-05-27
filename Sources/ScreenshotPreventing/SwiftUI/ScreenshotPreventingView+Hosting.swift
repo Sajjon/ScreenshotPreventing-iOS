@@ -5,12 +5,9 @@
 //  Created by David on 2023/4/28.
 //
 
-#if canImport(SwiftUI)
 import SwiftUI
 import UIKit
-import ScreenshotPreventing
 
-@available(iOS 13.0, *)
 final class ScreenshotPreventingHostingViewController<Content: View>: UIViewController {
 
     private let content: () -> Content
@@ -54,4 +51,3 @@ final class ScreenshotPreventingHostingViewController<Content: View>: UIViewCont
     }
 }
 
-#endif

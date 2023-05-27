@@ -4,9 +4,7 @@ A simple wrapper view that is able to prevent screenshot or screen recording on 
 
 ## Requirement
 
-iOS 12+.
-
-SwiftUI will need iOS 13+.
+iOS 13+.
 
 ## Installation
 
@@ -20,20 +18,8 @@ To integrate ScreenshotPreventing into your Xcode project using Swift Package Ma
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/yoxisem544/ScreenshotPreventing.git", .upToNextMajor(from: "1.4.0"))
+    .package(url: "https://github.com/Sajjon/ScreenshotPreventing.git", .upToNextMajor(from: "1.4.0"))
 ]
-```
-
-### CocoaPods
-
-For ScreenshotPreventing, use the following entry in your Podfile:
-
-```ruby
-pod 'ScreenshotPreventing', '~> 1.4.0'
-# or 
-pod 'ScreenshotPreventing/RxSwift', '~> 1.4.0'
-# or SwiftUI
-pod 'ScreenshotPreventing/SwiftUI', '~> 1.4.0'
 ```
 
 ## Demo Project
@@ -54,47 +40,6 @@ By triggering screenshot on simulator, look for `Simulator > Device > Trigger Sc
 
 <img src="./Assets/demo.gif" width="470" />
 
-## Example
-
-You can wrap view you don't want to be screenshot inside `ScreenshotPreventingView`
-
-```swift
-import UIKit
-import ScreenshotPreventing
-
-class ViewController: UIViewController {
-
-    let stack = UIStackView()
-    let container = ScreenshotPreventingView(contentView: stack)
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // add to subview here.
-    }
-}
-```
-
-Or you can setup content view later.
-
-```swift
-import UIKit
-import ScreenshotPreventing
-
-class ViewController: UIViewController {
-
-    let stack = UIStackView()
-    let container = ScreenshotPreventingView()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // add to subview here.
-        container.setup(contentView: stack)
-    }
-}
-```
-
 ## SwiftUI Usage
 
 Simply wrap your view inside `ScreenshotPrevent` View. 
@@ -102,7 +47,7 @@ You should pass in a isProtected binding to toggle on whether to prevent screens
 
 ```swift
 import SwiftUI
-import ScreenshotPreventingSwiftUI
+import ScreenshotPreventingSwift
 
 struct ContentView: View {
 
@@ -123,7 +68,7 @@ or using view modifier extension
 
 ```swift
 import SwiftUI
-import ScreenshotPreventingSwiftUI
+import ScreenshotPreventing
 
 struct ContentView: View {
 
@@ -137,16 +82,4 @@ struct ContentView: View {
             .screenshotProtected(isProtected: preventScreenshot)
     }
 }
-```
-
-## RxSwift Extension
-
-If you use RxSwift in your project, there is a Rx extension to drive `preventScreenCapture` property on `ScreenshotPreventingView`.
-
-Use `RxScreenshotPreventing` package for this extension.
-
-```swift
-whetherOrNotToPreventScreenshotObservable
-    .bind(to: screenshotPreventingView.rx.preventScreenCapture)
-    .disposed(by: bag)
 ```

@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import ScreenshotPreventingSwiftUI
+import ScreenshotPreventing
 
 struct ContentView: View {
 
