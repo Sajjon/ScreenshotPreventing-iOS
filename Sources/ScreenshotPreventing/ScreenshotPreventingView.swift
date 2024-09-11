@@ -56,6 +56,7 @@ public final class ScreenshotPreventingView: UIView {
     // MARK: - 🏗 UI
 
     private func setupUI() {
+        self.backgroundColor = .clear
         textField.backgroundColor = .clear
         textField.isUserInteractionEnabled = false
 
@@ -91,6 +92,7 @@ public final class ScreenshotPreventingView: UIView {
 
         container.addSubview(contentView)
         container.isUserInteractionEnabled = isUserInteractionEnabled
+        contentView.backgroundColor = .clear
         contentView.translatesAutoresizingMaskIntoConstraints = false
 
         let bottomConstraint = contentView.bottomAnchor.constraint(equalTo: container.bottomAnchor)
